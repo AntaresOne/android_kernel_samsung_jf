@@ -2150,16 +2150,34 @@ static void ssp_get_positions(int *acc, int *mag)
 	else
 		*acc = MPU6500_BOTTOM_RIGHT_UPPER;
 
-	if (system_rev == BOARD_REV11)
-		*mag = YAS532_TOP_RIGHT_LOWER;
-	else if (system_rev > BOARD_REV06)
-		*mag = YAS532_BOTTOM_RIGHT_LOWER;
-	else if (system_rev > BOARD_REV03)
-		*mag = YAS532_TOP_RIGHT_LOWER;
-	else if (system_rev == BOARD_REV03)
-		*mag = YAS532_BOTTOM_RIGHT_LOWER;
-	else
-		*mag = YAS532_TOP_LEFT_UPPER;
+        if (system_rev == BOARD_REV13)
+                printk(KERN_DEBUG"board revision 13.\n");
+        else if (system_rev == BOARD_REV12)
+                printk(KERN_DEBUG"board revision 12.\n");
+        else if (system_rev == BOARD_REV11)
+                printk(KERN_DEBUG"board revision 11.\n");
+        else if (system_rev ==  BOARD_REV10)
+                printk(KERN_DEBUG"board revision 10.\n");
+        else if (system_rev == BOARD_REV09)
+                printk(KERN_DEBUG"board revision 9.\n");
+        else if (system_rev == BOARD_REV08)
+                printk(KERN_DEBUG"board revision 8.\n");
+        else if (system_rev == BOARD_REV07)
+                printk(KERN_DEBUG"board revision 7.\n");
+        else if (system_rev == BOARD_REV06)
+                printk(KERN_DEBUG"board revision 6.\n");
+        else if (system_rev == BOARD_REV05)
+                printk(KERN_DEBUG"board revision 5.\n");
+        else if (system_rev == BOARD_REV04)
+                printk(KERN_DEBUG"board revision 4.\n");
+        else if (system_rev == BOARD_REV03)
+                printk(KERN_DEBUG"board revision 3.\n");
+        else if (system_rev == BOARD_REV02)
+                printk(KERN_DEBUG"board revision 2.\n");
+        else if (system_rev == BOARD_REV01)
+                printk(KERN_DEBUG"board revision 1.\n");
+        else
+                printk(KERN_DEBUG"board revision unknown.\n");
 
 	pr_info("%s, position acc : %d, mag = %d\n", __func__, *acc, *mag);
 }
